@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,9 +21,9 @@ export default function SibebarUserMenu({
   const router = useRouter();
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>
-        <div className="flex w-full">
-          <div className="text-lg p-4 rounded-full bg-white">
+      <DropdownMenuTrigger asChild>
+        <Button variant={"ghost"} className="h-fit flex w-full">
+          <div className="p-2 rounded-full bg-white">
             {firstName[0]}
             {lastName[0]}
           </div>
@@ -30,9 +31,9 @@ export default function SibebarUserMenu({
             {firstName} {lastName}
           </div>
           <div className="flex items-center">
-            <ChevronsUpDown />
+            <ChevronsUpDown className="w-4 h-4" />
           </div>
-        </div>
+        </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-full min-w-[var(--radix-dropdown-menu-trigger-width)]">
         <DropdownMenuItem
